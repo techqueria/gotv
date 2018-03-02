@@ -1,8 +1,8 @@
 {
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "packagerPort": 19002,
+  "packagerPid": 32474,
+  "expoServerNgrokUrl": "https://rw-pz7.eddieescamilla.escamilla-rn-base.exp.direct",
+  "packagerNgrokUrl": "https://packager.rw-pz7.eddieescamilla.escamilla-rn-base.exp.direct",
+  "ngrokPid": 32497
 }
