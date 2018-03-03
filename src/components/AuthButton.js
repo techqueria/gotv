@@ -6,19 +6,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button } from 'react-native';
-import { loginSelectedAction } from '../actions/navigation'
+import { loginSelectedAction, logoutSelectedAction } from '../actions/navigation'
 
-const AuthButton = ({ logout, loginScreen, isLoggedIn, loginSelected }) => (
+const AuthButton = ({ isLoggedIn, loginSelected, logoutSelected }) => (
   <Button
     title={isLoggedIn ? 'Log Out/AuthButton' : 'Open Login Screen/AuthButton'}
-    onPress={isLoggedIn ? logout : loginSelected}
+    onPress={isLoggedIn ? logoutSelected : loginSelected}
   />
 );
 
 AuthButton.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
-  logout: PropTypes.func.isRequired,
-  loginScreen: PropTypes.func.isRequired,
+  logoutSelected: PropTypes.func.isRequired,
+  loginSelected: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -26,7 +26,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch({ type: 'Logout' }),
+  logoutSelected: () => dispatch(logoutSelectedAction()),
   loginSelected: () => dispatch(loginSelectedAction()),
 });
 

@@ -4,8 +4,17 @@
 
 import { NavigationActions } from 'react-navigation'
 
+const Login = 'Login'
+const Logout = 'Logout'
+
 export function loginSelectedAction () {
   return (dispatch, getState) => {
-    dispatch(NavigationActions.navigate({ routeName: 'Login' }))
+    dispatch(NavigationActions.navigate({ routeName: Login }))
+  }
+}
+
+export function logoutSelectedAction () {
+  return (dispatch, getState) => {
+    dispatch({ type: Logout })
   }
 }
