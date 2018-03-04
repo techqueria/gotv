@@ -4,7 +4,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import { loginSelectedAction, logoutSelectedAction } from '../actions/navigation'
 
 const styles = StyleSheet.create({
   container: {
@@ -20,20 +22,41 @@ const styles = StyleSheet.create({
   },
 });
 
-const LoginScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Screen A
-    </Text>
-    <Text style={styles.instructions}>
-      This is great
-    </Text>
-    <Button
-      onPress={() => navigation.dispatch({ type: 'Login' })}
-      title="Log in/Login Screen"
-    />
-  </View>
-);
+class LoginScreen extends React.Component {
+  componentWillMount () {
+    console.log('LoginScreen componentWillMount')
+  }
+
+  componentWillUnmount () {
+    console.log('LoginScreen componentWillUnmount')
+  }
+
+  render () {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Screen A
+        </Text>
+        <Text style={styles.instructions}>
+          This is great
+        </Text>
+        <Button
+          onPress={() => this.props.loginSelected()}
+          title="Log in/Login Screen"
+        />
+      </View>
+    )
+  }
+}
+
+const mapStateToProps = state => ({
+  isLoggedIn: state.auth.isLoggedIn,
+});
+
+const mapDispatchToProps = dispatch => ({
+  logoutSelected: () => dispatch(logoutSelectedAction()),
+  loginSelected: () => dispatch(loginSelectedAction()),
+});
 
 LoginScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
@@ -43,4 +66,4 @@ LoginScreen.navigationOptions = {
   title: 'Log In',
 };
 
-export default LoginScreen;
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);

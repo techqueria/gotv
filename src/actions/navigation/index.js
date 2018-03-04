@@ -7,9 +7,15 @@ import { NavigationActions } from 'react-navigation'
 const Login = 'Login'
 const Logout = 'Logout'
 
-export function loginSelectedAction () {
+export function navToLoginAction () {
   return (dispatch, getState) => {
     dispatch(NavigationActions.navigate({ routeName: Login }))
+  }
+}
+
+export function loginSelectedAction () {
+  return (dispatch, getState) => {
+    dispatch({ type: Login })
   }
 }
 
