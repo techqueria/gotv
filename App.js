@@ -3,7 +3,7 @@ import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk'
-import AppReducer from './src/reducers';
+import AppReducer from './src/store/store'
 import AppWithNavigationState from './src/navigators/AppNavigator';
 import { middleware } from './src/utils/redux';
 

@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
-  "packagerPort": 19002,
-  "packagerPid": 4765,
-  "expoServerNgrokUrl": "https://jm-mhm.eddieescamilla.escamilla-rn-base.exp.direct",
-  "packagerNgrokUrl": "https://packager.jm-mhm.eddieescamilla.escamilla-rn-base.exp.direct",
-  "ngrokPid": 4789
+  "packagerPort": 19003,
+  "packagerPid": 10864,
+  "expoServerNgrokUrl": "https://7g-xef.eddieescamilla.escamilla-rn-base.exp.direct",
+  "packagerNgrokUrl": "https://packager.7g-xef.eddieescamilla.escamilla-rn-base.exp.direct",
+  "ngrokPid": 10885
 }

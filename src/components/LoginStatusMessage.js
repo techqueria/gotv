@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const LoginStatusMessage = ({ isLoggedIn, dispatch }) => {
+const LoginStatusMessage = ({ isLoggedIn, navToProfile }) => {
   if (!isLoggedIn) {
     return <Text>Please log in</Text>;
   }
@@ -27,7 +27,7 @@ const LoginStatusMessage = ({ isLoggedIn, dispatch }) => {
         {'You are "logged in" right now'}
       </Text>
       <Button
-        onPress={() => this.props.navToProfile()}
+        onPress={() => navToProfile()}
         title="Profile"
       />
     </View>
