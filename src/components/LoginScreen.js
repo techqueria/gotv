@@ -6,7 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { loginSelectedAction, logoutSelectedAction } from '../actions/navigation'
+import { loginSelectedAction } from '../actions/navigation'
 
 const styles = StyleSheet.create({
   container: {
@@ -54,8 +54,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logoutSelected: () => dispatch(logoutSelectedAction()),
-  loginSelected: () => dispatch(loginSelectedAction()),
+  loginSelected: () => dispatch(loginSelectedAction())
 });
 
 LoginScreen.propTypes = {

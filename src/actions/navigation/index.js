@@ -6,10 +6,17 @@ import { NavigationActions } from 'react-navigation'
 
 const Login = 'Login'
 const Logout = 'Logout'
+const Profile = 'Profile'
 
 export function navToLoginAction () {
   return (dispatch, getState) => {
     dispatch(NavigationActions.navigate({ routeName: Login }))
+  }
+}
+
+export function navToProfileAction () {
+  return (dispatch, getState) => {
+    dispatch(NavigationActions.navigate({ routeName: Profile }))
   }
 }
 

@@ -6,7 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { NavigationActions } from 'react-navigation';
+import { navToProfileAction } from '../actions/navigation'
 
 const styles = StyleSheet.create({
   welcome: {
@@ -20,14 +20,14 @@ const LoginStatusMessage = ({ isLoggedIn, dispatch }) => {
   if (!isLoggedIn) {
     return <Text>Please log in</Text>;
   }
+
   return (
     <View>
       <Text style={styles.welcome}>
         {'You are "logged in" right now'}
       </Text>
       <Button
-        onPress={() =>
-          dispatch(NavigationActions.navigate({ routeName: 'Profile' }))}
+        onPress={() => this.props.navToProfile()}
         title="Profile"
       />
     </View>
@@ -43,4 +43,8 @@ const mapStateToProps = state => ({
   isLoggedIn: state.auth.isLoggedIn,
 });
 
-export default connect(mapStateToProps)(LoginStatusMessage);
+const mapDispatchToProps = dispatch => ({
+  navToProfile: () => dispatch(navToProfileAction())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginStatusMessage);
