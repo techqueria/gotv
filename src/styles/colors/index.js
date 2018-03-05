@@ -14,5 +14,7 @@ export default {
   SativaYellow: '#FACA18',
   HybridGreen: '#42BC97',
   IndicaBlue: '#126CAB',
-  CbdPurple: '#9360A8'
+  CbdPurple: '#9360A8',
+  // nonEaze below
+  OffWhite: '#F5FCFF'
 };

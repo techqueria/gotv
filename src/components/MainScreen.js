@@ -10,15 +10,7 @@ import { transparentHeaderStyle } from '../styles/navigation';
 
 import LoginStatusMessage from './LoginStatusMessage';
 import AuthButton from './AuthButton';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
+import RoundedButton from '../reusableComponents/buttons/roundedButton'
 
 class MainScreen extends React.Component {
   componentWillMount () {
@@ -32,17 +24,42 @@ class MainScreen extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <LoginStatusMessage />
-        <AuthButton />
+        <View style={styles.welcomeWrapper}>
+          <LoginStatusMessage />
+          <AuthButton />
+          <RoundedButton
+            text="SIGN UP"
+            callback={this.createAccount}
+            color={colors.CloudWhite}
+          />
+        </View>
       </View>
     )
+  }
+
+  createAccount() {
+    alert('Create account pressed');
   }
 }
 
 MainScreen.navigationOptions = {
-  title: 'Logged Out Screen',
+  // title: 'Logged Out Screen',
   headerTintColor: colors.CloudWhite,
   headerStyle: transparentHeaderStyle
 };
 
 export default connect()(MainScreen);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.EazeBlue,
+  },
+  welcomeWrapper: {
+    flex: 1,
+    marginTop: 230,
+    padding: 20,
+  },
+});

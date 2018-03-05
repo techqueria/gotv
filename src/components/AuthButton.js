@@ -7,11 +7,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button } from 'react-native';
 import { navToLoginAction, logoutSelectedAction } from '../actions/navigation'
+import RoundedButton from '../reusableComponents/buttons/roundedButton'
+import colors from '../styles/colors'
 
 const AuthButton = ({ isLoggedIn, navToLogin, logoutSelected }) => (
-  <Button
-    title={isLoggedIn ? 'Log Out/AuthButton' : 'Open Login Screen/AuthButton'}
-    onPress={isLoggedIn ? logoutSelected : navToLogin}
+  <RoundedButton
+    text={isLoggedIn ? 'LOG OUT' : 'LOG IN'}
+    callback={isLoggedIn ? logoutSelected : navToLogin}
+    color={colors.CloudWhite}
   />
 );
 

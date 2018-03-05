@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 const LoginStatusMessage = ({ isLoggedIn, navToProfile }) => {
   if (!isLoggedIn) {
-    return <Text>Please log in</Text>;
+    return <Text>Login or Signup</Text>;
   }
 
   return (
