@@ -14,7 +14,8 @@ const AuthButton = ({ isLoggedIn, navToLogin, logoutSelected }) => (
   <RoundedButton
     text={isLoggedIn ? 'LOG OUT' : 'LOG IN'}
     callback={isLoggedIn ? logoutSelected : navToLogin}
-    color={colors.CloudWhite}
+    color={colors.EazeBlue}
+    background={colors.CloudWhite}
   />
 );
 

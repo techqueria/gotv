@@ -7,18 +7,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { navToProfileAction } from '../actions/navigation'
+import colors from '../styles/colors'
 
 const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: colors.CloudWhite
   },
 });
 
 const LoginStatusMessage = ({ isLoggedIn, navToProfile }) => {
   if (!isLoggedIn) {
-    return <Text>Login or Signup</Text>;
+    return <Text style={styles.welcome} >Login or Signup</Text>;
   }
 
   return (

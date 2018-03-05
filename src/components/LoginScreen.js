@@ -7,20 +7,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { loginSelectedAction } from '../actions/navigation'
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
+import colors from '../styles/colors'
+import { transparentHeaderStyle } from '../styles/navigation';
 
 class LoginScreen extends React.Component {
   componentWillMount () {
@@ -63,6 +51,22 @@ LoginScreen.propTypes = {
 
 LoginScreen.navigationOptions = {
   title: 'Log In',
+  headerTintColor: colors.CloudWhite,
+  headerStyle: transparentHeaderStyle
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.EazeBlue,
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+});
