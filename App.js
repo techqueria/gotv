@@ -12,7 +12,7 @@ const store = createStore(
   applyMiddleware(middleware, thunk),
 );
 
-class EscamillaApp extends React.Component {
+class EazeApp extends React.Component {
   render() {
     return (
       <Provider store={store}>
@@ -22,6 +22,6 @@ class EscamillaApp extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('ReduxBase', () => EscamillaApp);
+AppRegistry.registerComponent('EazeApp', () => EazeApp);
 
-export default EscamillaApp;
+export default EazeApp;
