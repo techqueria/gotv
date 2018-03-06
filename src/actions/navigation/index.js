@@ -3,6 +3,7 @@
  */
 
 import { NavigationActions } from 'react-navigation'
+import { setLoggedInState } from '../auth'
 
 const Login = 'Login'
 const Logout = 'Logout'
@@ -34,6 +35,7 @@ export function resetToProfileAction () {
 
 export function resetToEntryAction () {
   return (dispatch, getState) => {
+    dispatch(setLoggedInState(false));
     dispatch(NavigationActions.reset({
       index: 0,
       actions: [
@@ -43,6 +45,7 @@ export function resetToEntryAction () {
   }
 }
 
+// came with React Navigation Redux example code
 export function loginSelectedAction () {
   return (dispatch, getState) => {
     dispatch({ type: Login })
