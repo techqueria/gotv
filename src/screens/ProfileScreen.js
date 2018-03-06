@@ -5,7 +5,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { resetToEntryAction } from '../actions/navigation'
+import { resetToEntryAction } from '../actions/navigation/index'
 
 class ProfileScreen extends React.Component {
 

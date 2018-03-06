@@ -6,13 +6,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native';
-import colors from '../styles/colors'
-import { transparentHeaderStyle } from '../styles/navigation';
+import colors from '../styles/colors/index'
+import { transparentHeaderStyle } from '../styles/navigation/index';
 import InputField from '../reusableComponents/form/InputField'
 import Loader from '../reusableComponents/loadingSpinner/Loader'
 import NextArrowButtom from '../reusableComponents/buttons/nextArrowButton'
-import { logInCheckAction } from '../actions/auth'
-import { resetToProfileAction } from '../actions/navigation'
+import { logInCheckAction } from '../actions/auth/index'
+import { resetToProfileAction } from '../actions/navigation/index'
 
 class LoginScreen extends React.Component {
 

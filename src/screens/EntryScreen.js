@@ -5,10 +5,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, View } from 'react-native';
-import colors from '../styles/colors'
-import { transparentHeaderStyle } from '../styles/navigation';
+import colors from '../styles/colors/index'
+import { transparentHeaderStyle } from '../styles/navigation/index';
 
-import AuthButton from './AuthButton';
+import AuthButton from '../components/AuthButton';
 import RoundedButton from '../reusableComponents/buttons/roundedButton'
 
 class EntryScreen extends React.Component {
