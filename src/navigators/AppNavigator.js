@@ -10,7 +10,7 @@ import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/LoginScreen';
 import EntryScreen from '../screens/EntryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import { addListener } from '../utils/redux';
+import { addListener } from './redux';
 
 export const AppNavigator = StackNavigator({
   Login: { screen: LoginScreen },
