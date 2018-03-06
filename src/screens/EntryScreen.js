@@ -12,13 +12,6 @@ import AuthButton from '../components/AuthButton';
 import RoundedButton from '../components/buttons/roundedButton'
 
 class EntryScreen extends React.Component {
-  componentWillMount () {
-    console.log('EntryScreen componentWillMount')
-  }
-
-  componentWillUnmount () {
-    console.log('EntryScreen componentWillUnmount')
-  }
 
   render () {
     return (

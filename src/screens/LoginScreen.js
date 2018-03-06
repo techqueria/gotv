@@ -31,14 +31,6 @@ class LoginScreen extends React.Component {
     }
   }
 
-  componentWillMount () {
-    console.log('LoginScreen componentWillMount')
-  }
-
-  componentWillUnmount () {
-    console.log('LoginScreen componentWillUnmount')
-  }
-
   render () {
     const background = this.state.formStatus === 'valid' ? colors.EazeBlue : colors.FuegoRed
     const showNotification = this.state.formStatus === 'valid' ? false : true
@@ -50,7 +42,6 @@ class LoginScreen extends React.Component {
         <View style={styles.container}>
           <ScrollView
             style={styles.formWrapper}
-            onScroll={console.log('scrollview')}
             scrollEventThrottle={16}
           >
             <InputField
@@ -151,14 +142,12 @@ class LoginScreen extends React.Component {
           loadingVisible: false,
           formStatus: 'valid',
         });
-        console.log('*** email & password validation succeeded')
         navToProfile()
       } else {
         this.setState({
           loadingVisible: false,
           formStatus: 'invalid',
         });
-        console.log('*** email & password validation failed')
       }
     },1000);
   }
