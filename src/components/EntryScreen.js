@@ -8,7 +8,6 @@ import { StyleSheet, View } from 'react-native';
 import colors from '../styles/colors'
 import { transparentHeaderStyle } from '../styles/navigation';
 
-import LoginStatusMessage from './LoginStatusMessage';
 import AuthButton from './AuthButton';
 import RoundedButton from '../reusableComponents/buttons/roundedButton'
 
@@ -25,7 +24,6 @@ class EntryScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.welcomeWrapper}>
-          <LoginStatusMessage />
           <AuthButton />
           <RoundedButton
             text="SIGN UP"

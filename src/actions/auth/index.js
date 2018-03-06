@@ -4,7 +4,7 @@ import user from '../../data/user.json';
 
 export function logInCheckAction(email, password) {
   return (dispatch, getState) => {
-    if (email === user.email) {
+    if (user.emails.includes(email)) {
       dispatch(setLoggedInState(true));
       return true;
     } else {

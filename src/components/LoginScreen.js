@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   formWrapper: {
-    marginTop: 100,
+    marginTop: 200,
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 20,
