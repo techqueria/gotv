@@ -9,7 +9,7 @@ import colors from '../styles/colors/index'
 import { transparentHeaderStyle } from '../styles/navigation/index';
 
 import AuthButton from '../components/AuthButton';
-import RoundedButton from '../reusableComponents/buttons/roundedButton'
+import RoundedButton from '../components/buttons/roundedButton'
 
 class EntryScreen extends React.Component {
   componentWillMount () {

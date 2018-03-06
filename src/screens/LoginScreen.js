@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native';
 import colors from '../styles/colors/index'
 import { transparentHeaderStyle } from '../styles/navigation/index';
-import InputField from '../reusableComponents/form/InputField'
-import Loader from '../reusableComponents/loadingSpinner/Loader'
-import NextArrowButtom from '../reusableComponents/buttons/nextArrowButton'
+import InputField from '../components/form/InputField'
+import Loader from '../components/loadingSpinner/Loader'
+import NextArrowButtom from '../components/buttons/nextArrowButton'
 import { logInCheckAction } from '../actions/auth/index'
 import { resetToProfileAction } from '../actions/navigation/index'
 

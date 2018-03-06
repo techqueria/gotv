@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button } from 'react-native';
 import { navToLoginAction, logoutSelectedAction } from '../actions/navigation'
-import RoundedButton from '../reusableComponents/buttons/roundedButton'
+import RoundedButton from './buttons/roundedButton'
 import colors from '../styles/colors'
 
 const AuthButton = ({ isLoggedIn, navToLogin, logoutSelected }) => (
