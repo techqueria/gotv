@@ -7,6 +7,7 @@ import { NavigationActions } from 'react-navigation'
 const Login = 'Login'
 const Logout = 'Logout'
 const Profile = 'Profile'
+const Entry = 'Entry'
 
 export function navToLoginAction () {
   return (dispatch, getState) => {
@@ -31,12 +32,12 @@ export function resetToProfileAction () {
   }
 }
 
-export function resetToLoginAction () {
+export function resetToEntryAction () {
   return (dispatch, getState) => {
     dispatch(NavigationActions.reset({
       index: 0,
       actions: [
-        NavigationActions.navigate({ routeName: Login }),
+        NavigationActions.navigate({ routeName: Entry }),
       ],
     }))
   }

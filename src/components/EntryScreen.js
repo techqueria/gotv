@@ -12,13 +12,13 @@ import LoginStatusMessage from './LoginStatusMessage';
 import AuthButton from './AuthButton';
 import RoundedButton from '../reusableComponents/buttons/roundedButton'
 
-class MainScreen extends React.Component {
+class EntryScreen extends React.Component {
   componentWillMount () {
-    console.log('MainScreen componentWillMount')
+    console.log('EntryScreen componentWillMount')
   }
 
   componentWillUnmount () {
-    console.log('MainScreen componentWillUnmount')
+    console.log('EntryScreen componentWillUnmount')
   }
 
   render () {
@@ -42,13 +42,13 @@ class MainScreen extends React.Component {
   }
 }
 
-MainScreen.navigationOptions = {
+EntryScreen.navigationOptions = {
   // title: 'Logged Out Screen',
   headerTintColor: colors.CloudWhite,
   headerStyle: transparentHeaderStyle
 };
 
-export default connect()(MainScreen);
+export default connect()(EntryScreen);
 
 const styles = StyleSheet.create({
   container: {

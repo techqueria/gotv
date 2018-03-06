@@ -5,7 +5,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { resetToLoginAction } from '../actions/navigation'
+import { resetToEntryAction } from '../actions/navigation'
 
 class ProfileScreen extends React.Component {
 
@@ -16,8 +16,8 @@ class ProfileScreen extends React.Component {
           Profile Screen
         </Text>
         <Button
-          onPress={() => this.props.loginSelected()}
-          title="Log in/Login Screen"
+          onPress={() => this.props.logoutSelected()}
+          title="Logout"
           style={styles.buttonStyling}
         />
       </View>
@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  loginSelected: () => dispatch(resetToLoginAction())
+  logoutSelected: () => dispatch(resetToEntryAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
