@@ -16,5 +16,6 @@ export default {
   IndicaBlue: '#126CAB',
   CbdPurple: '#9360A8',
   // nonEaze below
-  OffWhite: '#F5FCFF'
+  OffWhite: '#F5FCFF',
+  semiTransparentWhite: 'rgba(255,255,255,0.6)',
 };
