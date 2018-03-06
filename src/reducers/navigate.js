@@ -10,8 +10,10 @@ const firstAction = AppNavigator.router.getActionForPathAndParams('Main');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 const secondAction = AppNavigator.router.getActionForPathAndParams('Login');
 const initialNavState = AppNavigator.router.getStateForAction(
-  secondAction,
-  tempNavState
+  // TODO: Determine logged in state versus first time login
+  // secondAction,
+  // tempNavState
+  firstAction
 );
 
 export function nav(state = initialNavState, action) {
