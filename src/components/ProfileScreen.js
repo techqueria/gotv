@@ -3,7 +3,37 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { connect } from 'react-redux';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { resetToLoginAction } from '../actions/navigation'
+
+class ProfileScreen extends React.Component {
+
+  render () {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Profile Screen
+        </Text>
+        <Button
+          onPress={() => this.props.loginSelected()}
+          title="Log in/Login Screen"
+          style={styles.buttonStyling}
+        />
+      </View>
+    )
+  }
+}
+
+const mapStateToProps = state => ({
+  isLoggedIn: state.auth.isLoggedIn,
+});
+
+const mapDispatchToProps = dispatch => ({
+  loginSelected: () => dispatch(resetToLoginAction())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -18,17 +48,3 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
-
-const ProfileScreen = () => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Profile Screen
-    </Text>
-  </View>
-);
-
-ProfileScreen.navigationOptions = {
-  title: 'Profile/ProfileScreen',
-};
-
-export default ProfileScreen;

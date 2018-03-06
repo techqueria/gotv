@@ -6,7 +6,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { loginSelectedAction } from '../actions/navigation'
 import colors from '../styles/colors'
 import { transparentHeaderStyle } from '../styles/navigation';
 import InputField from '../reusableComponents/form/InputField'
@@ -54,11 +53,6 @@ class LoginScreen extends React.Component {
             onScroll={console.log('scrollview')}
             scrollEventThrottle={16}
           >
-            <Button
-              onPress={() => this.props.loginSelected()}
-              title="Log in/Login Screen"
-              style={styles.buttonStyling}
-            />
             <InputField
               customStyle={{marginBottom: 30}}
               textColor={colors.OffWhite}
@@ -175,7 +169,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  loginSelected: () => dispatch(loginSelectedAction()),
   loginCheck: (email, password) => dispatch(logInCheckAction(email, password)),
   navToProfile: () => dispatch(resetToProfileAction())
 });

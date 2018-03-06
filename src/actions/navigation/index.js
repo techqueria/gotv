@@ -31,6 +31,17 @@ export function resetToProfileAction () {
   }
 }
 
+export function resetToLoginAction () {
+  return (dispatch, getState) => {
+    dispatch(NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: Login }),
+      ],
+    }))
+  }
+}
+
 export function loginSelectedAction () {
   return (dispatch, getState) => {
     dispatch({ type: Login })

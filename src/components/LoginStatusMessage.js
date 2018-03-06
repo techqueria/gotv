@@ -37,8 +37,7 @@ const LoginStatusMessage = ({ isLoggedIn, navToProfile }) => {
 };
 
 LoginStatusMessage.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
