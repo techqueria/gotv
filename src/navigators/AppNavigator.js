@@ -5,17 +5,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addNavigationHelpers, StackNavigator } from 'react-navigation';
+// import { addNavigationHelpers, StackNavigator } from 'react-navigation';
+import { addNavigationHelpers, StackNavigator, TabNavigator } from 'react-navigation';
 
 import LoginScreen from '../screens/LoginScreen';
 import EntryScreen from '../screens/EntryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import FriendScreen from '../screens/FriendScreen';
+import EventScreen from '../screens/EventScreen';
 import { addListener } from './redux';
 
-export const AppNavigator = StackNavigator({
+export const LoginNavigator = StackNavigator({
   Login: { screen: LoginScreen },
   Entry: { screen: EntryScreen },
   Profile: { screen: ProfileScreen },
+});
+export const AppNavigator = TabNavigator({
+  Login: LoginNavigator,
+  Friends: { screen: FriendScreen },
+  Cafecitos: { screen: EventScreen },
 });
 
 class AppWithNavigationState extends React.Component {
