@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
-  "packagerPort": 19003,
-  "packagerPid": 43063,
-  "expoServerNgrokUrl": "https://pb-upe.eddieescamilla.escamilla-rn-base.exp.direct",
-  "packagerNgrokUrl": "https://packager.pb-upe.eddieescamilla.escamilla-rn-base.exp.direct",
-  "ngrokPid": 43084
+  "packagerPort": 19001,
+  "packagerPid": 54054,
+  "expoServerNgrokUrl": "https://zy-gi3.quahada.escamilla-rn-base.exp.direct",
+  "packagerNgrokUrl": "https://packager.zy-gi3.quahada.escamilla-rn-base.exp.direct",
+  "ngrokPid": 54081
 }

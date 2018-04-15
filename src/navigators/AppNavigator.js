@@ -21,9 +21,9 @@ export const LoginNavigator = StackNavigator({
   Profile: { screen: ProfileScreen },
 });
 export const AppNavigator = TabNavigator({
-  Login: LoginNavigator,
-  Friends: { screen: FriendScreen },
   Cafecitos: { screen: EventScreen },
+  Friends: { screen: FriendScreen },
+  Login: LoginNavigator,
 });
 
 class AppWithNavigationState extends React.Component {

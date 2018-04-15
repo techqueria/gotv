@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { resetToEntryAction } from '../actions/navigation/index'
 
-class ProfileScreen extends React.Component {
+class FriendScreen extends React.Component {
 
   render () {
     return (
@@ -28,7 +28,7 @@ const mapDispatchToProps = dispatch => ({
   logoutSelected: () => dispatch(resetToEntryAction())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(FriendScreen);
 
 const styles = StyleSheet.create({
   container: {

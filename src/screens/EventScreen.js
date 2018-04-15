@@ -4,10 +4,10 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, DatePickerIOS } from 'react-native';
 import { resetToEntryAction } from '../actions/navigation/index'
 
-class ProfileScreen extends React.Component {
+class EventScreen extends React.Component {
 
   render () {
     return (
@@ -15,6 +15,7 @@ class ProfileScreen extends React.Component {
         <Text style={styles.welcome}>
           Cafecitos
         </Text>
+        <DatePickerExample />
       </View>
     )
   }
@@ -28,7 +29,7 @@ const mapDispatchToProps = dispatch => ({
   logoutSelected: () => dispatch(resetToEntryAction())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(EventScreen);
 
 const styles = StyleSheet.create({
   container: {
@@ -43,3 +44,38 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+
+//   componentDidMount() {
+//     let dataSource = this.state.dataSource.cloneWithRowsAndSections({
+//       DatePickerIOS: [this._renderDatePicker],
+//     });
+// 
+//     this.setState({ dataSource });
+//   }
+// 
+// _renderDatePicker = () => {
+//     return <DatePickerExample />;
+//   };
+
+class DatePickerExample extends React.Component {
+  state = {
+    date: new Date(),
+    timeZoneOffsetInHours: -1 * new Date().getTimezoneOffset() / 60,
+  };
+
+  render() {
+    return (
+      <DatePickerIOS
+        date={this.state.date}
+        mode="datetime"
+        timeZoneOffsetInMinutes={this.state.timeZoneOffsetInHours * 60}
+        onDateChange={this._onDateChange}
+      />
+    );
+  }
+
+  _onDateChange = date => {
+    this.setState({ date });
+  };
+}
