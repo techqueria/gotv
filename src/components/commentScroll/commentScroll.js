@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Image, SectionList, StyleSheet, Text, View } from 'react-native';
 
 const photoImg = require('../../../assets/779-users.png');
+const forImg = require('../../../assets/777-thumbs-up.png');
+const againstImg = require('../../../assets/778-thumbs-down.png');
 const ipsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 export default class SectionListBasics extends Component {
@@ -20,14 +22,14 @@ export default class SectionListBasics extends Component {
       <View style={styles.container}>
         <SectionList
           sections={[
-            {title: 'D', data: [{name: 'Diego', location: 'Oakland, CA', photo: require('../../../assets/779-users.png')}]},
+            {title: 'D', data: [{name: 'Diego', location: 'Oakland, CA', photo: photoImg, body: ipsum, stance: forImg}]},
             // {title: 'D', data: ['Devin']},
             // {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
             {title: 'J', data: [
-              {name: 'Juanita', location: 'San Jose, CA', photo: photoImg, body: ipsum},
-              {name: 'Justino', location: 'Richmond, CA', photo: require('../../../assets/779-users.png')},
-              {name: 'Julia', location: 'San Mateo, CA', photo: require('../../../assets/779-users.png')},
-              {name: 'Javier', location: 'San Francisco, CA', photo: require('../../../assets/779-users.png')},
+              {name: 'Juanita', location: 'San Jose, CA', photo: photoImg, stance: forImg},
+              {name: 'Justino', location: 'Richmond, CA', photo: photoImg, body: ipsum, stance: againstImg},
+              {name: 'Julia', location: 'San Mateo, CA', photo: photoImg, body: ipsum},
+              {name: 'Javier', location: 'San Francisco, CA', photo: photoImg, body: ipsum, stance: forImg},
             ]},
           ]}
           // renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
@@ -45,6 +47,12 @@ export default class SectionListBasics extends Component {
                 />
                 <Text style={styles.item}>{item.name}</Text>
                 <Text style={styles.subitem}>{item.location}</Text>
+                {item.stance && 
+                  <Image
+                    style={{width: 25, height: 25}}
+                    source={item.stance}
+                  />
+                }
               </View>
               {item.body && 
                 <View>
