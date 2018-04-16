@@ -50,7 +50,7 @@ class FriendScreen extends React.Component {
             <Text
               style={styles.text}
             >
-              Test
+              User Name
             </Text>
             <CommentScroll/>            
             <View style={styles.nextButton}>

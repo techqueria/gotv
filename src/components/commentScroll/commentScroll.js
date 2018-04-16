@@ -1,16 +1,58 @@
 import React, { Component } from 'react';
-import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { Image, SectionList, StyleSheet, Text, View } from 'react-native';
+
+const photoImg = require('../../../assets/779-users.png');
+const ipsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 export default class SectionListBasics extends Component {
   render() {
+    // if (item.body) {
+    //   commentBody = <View
+    //                   style={{
+    //                     // flexDirection: 'row',
+    //                     height: 100,
+    //                     // padding: 20,
+    //                 }}>
+    //                   <Text>{item.body}</Text>
+    //                 </View>
+    // }
     return (
       <View style={styles.container}>
         <SectionList
           sections={[
-            {title: 'D', data: ['Devin']},
-            {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
+            {title: 'D', data: [{name: 'Diego', location: 'Oakland, CA', photo: require('../../../assets/779-users.png')}]},
+            // {title: 'D', data: ['Devin']},
+            // {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
+            {title: 'J', data: [
+              {name: 'Juanita', location: 'San Jose, CA', photo: photoImg, body: ipsum},
+              {name: 'Justino', location: 'Richmond, CA', photo: require('../../../assets/779-users.png')},
+              {name: 'Julia', location: 'San Mateo, CA', photo: require('../../../assets/779-users.png')},
+              {name: 'Javier', location: 'San Francisco, CA', photo: require('../../../assets/779-users.png')},
+            ]},
           ]}
-          renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
+          // renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
+          renderItem={({item}) => 
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  height: 100,
+                  padding: 20,
+              }}>
+                <Image
+                  style={{width: 50, height: 50}}
+                  source={item.photo}
+                />
+                <Text style={styles.item}>{item.name}</Text>
+                <Text style={styles.subitem}>{item.location}</Text>
+              </View>
+              {item.body && 
+                <View>
+                  <Text numberOfLines={3}>{item.body}</Text>
+                </View>
+              }
+            </View>
+          }
           renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
           keyExtractor={(item, index) => index}
         />
@@ -37,5 +79,11 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
+  },
+  subitem: {
+    padding: 10,
+    fontSize: 14,
+    height: 44,
+    fontWeight: 'normal',
   },
 })
