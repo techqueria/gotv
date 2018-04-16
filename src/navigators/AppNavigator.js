@@ -12,7 +12,8 @@ import LoginScreen from '../screens/LoginScreen';
 import EntryScreen from '../screens/EntryScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import FriendScreen from '../screens/FriendScreen';
-import EventScreen from '../screens/EventScreen';
+import RaceScreen from '../screens/RaceScreen';
+import ElectionsScreen from '../screens/ElectionsScreen';
 import { addListener } from './redux';
 
 export const LoginNavigator = StackNavigator({
@@ -20,8 +21,14 @@ export const LoginNavigator = StackNavigator({
   Entry: { screen: EntryScreen },
   Profile: { screen: ProfileScreen },
 });
+export const ElectionNavigator = StackNavigator({
+  Elections: { screen: ElectionsScreen },
+  Races: { screen: RaceScreen },
+  Profile: { screen: ProfileScreen },
+});
 export const AppNavigator = TabNavigator({
-  Cafecitos: { screen: EventScreen },
+  // Races: { screen: RaceScreen },
+  Elections: ElectionNavigator,
   Friends: { screen: FriendScreen },
   Login: LoginNavigator,
 });

@@ -9,6 +9,7 @@ const Login = 'Login'
 const Logout = 'Logout'
 const Profile = 'Profile'
 const Entry = 'Entry'
+const Race = 'Race'
 
 export function navToLoginAction () {
   return (dispatch, getState) => {
@@ -19,6 +20,13 @@ export function navToLoginAction () {
 export function navToProfileAction () {
   return (dispatch, getState) => {
     dispatch(NavigationActions.navigate({ routeName: Profile }))
+  }
+}
+
+export function navToRaceAction (id) {
+  console.log('navToRaceAction')
+  return (dispatch, getState) => {
+    dispatch(NavigationActions.navigate({ routeName: Race }))
   }
 }
 

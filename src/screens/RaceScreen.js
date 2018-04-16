@@ -11,10 +11,10 @@ import { transparentHeaderStyle } from '../styles/navigation/index';
 import InputField from '../components/form/InputField'
 import Loader from '../components/loadingSpinner/Loader'
 import NextArrowButtom from '../components/buttons/nextArrowButton'
-import CommentScroll from '../components/commentScroll/commentScroll'
+import RaceScroll from '../components/raceScroll/raceScroll'
 import { logInCheckAction } from '../actions/auth/index'
 
-class FriendScreen extends React.Component {
+class RaceScreen extends React.Component {
 
   constructor(props) {
     super(props)
@@ -42,22 +42,13 @@ class FriendScreen extends React.Component {
             style={styles.formWrapper}
             scrollEventThrottle={16}
           >
-            <Image
-              style={{width: 150, height: 150}}
-              source={require('../../assets/779-users.png')}
-            />
+            <Text style={styles.item}>Office</Text>
             <Text
               style={styles.text}
             >
-              User Name
+              This position has responsibility over xyz...
             </Text>
-            <CommentScroll/>
-            <View style={styles.nextButton}>
-              <NextArrowButtom
-                disabled={this.toggleNextButtonState()}
-                callback={this.goToNextStep}
-              />
-            </View>
+            <RaceScroll/>
           </ScrollView>
           <Loader
             modalVisible={this.state.loadingVisible}
@@ -66,75 +57,6 @@ class FriendScreen extends React.Component {
         </View>
       </KeyboardAvoidingView>
     )
-  }
-
-  // HELPER METHDOS
-
-  onEmailChange = (text) => {
-    // eslint-disable-next-line
-    const emailCheckRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    this.setState({
-      emailAddress: text
-    });
-    if (!this.state.validEmail) {
-      if (emailCheckRegex.test(text)) {
-        this.setState({
-          validEmail: true
-        });
-      }
-    } else {
-      if (!emailCheckRegex.test(text)) {
-        this.setState({
-          validEmail: false
-        });
-      }
-    }
-  }
-
-  onPasswordChange = (text) => {
-    if (!this.state.validPassword) {
-      if (text.length > 4) {
-        this.setState({
-          validPassword: true
-        });
-      }
-    } else {
-      if (text.length <= 4) {
-        this.setState({
-          validPassword: false
-        });
-      }
-    }
-  }
-
-  toggleNextButtonState = () => {
-    if (this.state.validEmail && this.state.validPassword) {
-      return false;
-    } else if (!this.state.validEmail || !this.state.validPassword) {
-      return true;
-    }
-    return true;
-  }
-
-  goToNextStep = () => {
-    const { navToProfile } = this.props
-    this.setState({loadingVisible: true});
-    // Fake slow response to show loading screen
-    setTimeout(() => {
-      if (this.props.loginCheck(this.state.emailAddress, '')) {
-        this.setState({
-          loadingVisible: false,
-          formStatus: 'valid',
-        });
-        navToProfile()
-      } else {
-        this.setState({
-          loadingVisible: false,
-          formStatus: 'invalid',
-        });
-      }
-    },1000);
   }
 }
 
@@ -147,18 +69,18 @@ const mapDispatchToProps = dispatch => ({
   navToProfile: () => dispatch(resetToProfileAction())
 });
 
-FriendScreen.propTypes = {
+RaceScreen.propTypes = {
   loginCheck: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired,
 };
 
-FriendScreen.navigationOptions = {
-  title: 'Friends',
+RaceScreen.navigationOptions = {
+  title: 'Races',
   headerTintColor: colors.CloudWhite,
   headerStyle: transparentHeaderStyle
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(RaceScreen);
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -189,3 +111,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   }
 });
+
+
+

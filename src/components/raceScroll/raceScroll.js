@@ -22,12 +22,15 @@ export default class SectionListBasics extends Component {
       <View style={styles.container}>
         <SectionList
           sections={[
-            {title: 'Friends', data: [{name: 'Diego', location: 'Oakland, CA', photo: photoImg, body: ipsum, stance: forImg}]},
-            {title: 'Community', data: [
+            {title: 'Candidates', data: [
+              {name: 'Bill', photo: photoImg},
+              {name: 'Mike', photo: photoImg},
+            ]},
+            {title: 'Community Discussion', data: [
               {name: 'Juanita', location: 'San Jose, CA', photo: photoImg, stance: forImg},
-              {name: 'Justino', location: 'Richmond, CA', photo: photoImg, body: ipsum, stance: againstImg},
+              {name: 'Justino', location: 'Richmond, CA', photo: photoImg, body: ipsum},
               {name: 'Julia', location: 'San Mateo, CA', photo: photoImg, body: ipsum},
-              {name: 'Javier', location: 'San Francisco, CA', photo: photoImg, body: ipsum, stance: forImg},
+              {name: 'Javier', location: 'San Francisco, CA', photo: photoImg, body: ipsum},
             ]},
           ]}
           // renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
