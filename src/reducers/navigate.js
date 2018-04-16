@@ -9,11 +9,14 @@ import { AppNavigator } from '../navigators/AppNavigator';
 const firstAction = AppNavigator.router.getActionForPathAndParams('Entry');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
 const secondAction = AppNavigator.router.getActionForPathAndParams('Login');
+const profileAction = AppNavigator.router.getActionForPathAndParams('Friends');
+const profileState = AppNavigator.router.getStateForAction(profileAction);
 const initialNavState = AppNavigator.router.getStateForAction(
   // TODO: Determine logged in state versus first time login, this is from base redux react navigation example, we will re-write this reducer
   // secondAction,
   // tempNavState
-  firstAction
+  profileAction
+  // firstAction
 );
 
 export function nav(state = initialNavState, action) {
