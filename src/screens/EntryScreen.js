@@ -4,10 +4,12 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
 import colors from '../styles/colors/index'
 import { transparentHeaderStyle } from '../styles/navigation/index';
-
+import { Alert } from 'react-native'
+import { Constants } from 'expo';
+import Expo from 'expo';
 import AuthButton from '../components/AuthButton';
 import RoundedButton from '../components/buttons/roundedButton'
 
